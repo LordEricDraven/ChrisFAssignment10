@@ -2,7 +2,6 @@ package com.coderscampus.Assignment10.spoonacular;
 
 import java.net.URI;
 
-import org.junit.jupiter.api.Test;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.client.RestTemplate;
 import org.springframework.web.util.UriComponentsBuilder;
@@ -19,7 +18,6 @@ public class SpoonacularApplication {
 		
 		RestTemplate rt = new RestTemplate();
 		
-		//https://api.spoonacular.com/mealplanner/generate?timeFrame=day targetCalories = 2000, diet = omnivore
 		URI uri = UriComponentsBuilder.fromHttpUrl("https://api.spoonacular.com/mealplanner/generate")
 									  .queryParam("timeFrame", "day")
 									  .queryParam("targetCalories", targetCalories)
@@ -29,7 +27,7 @@ public class SpoonacularApplication {
 									  .build()
 									  .toUri();
 		
-		ResponseEntity<DayResponse> response = rt.getForEntity(uri, DayResponse.class);
+		DayResponse response = rt.getForObject(uri, DayResponse.class);
 		System.out.println(response.getBody());
 	}
 	
@@ -39,7 +37,6 @@ public class SpoonacularApplication {
 		
 RestTemplate rt = new RestTemplate();
 		
-		//https://api.spoonacular.com/mealplanner/generate?timeFrame=day targetCalories = 2000, diet = omnivore
 		URI uri = UriComponentsBuilder.fromHttpUrl("https://api.spoonacular.com/mealplanner/generate")
 									  .queryParam("timeFrame", "week")
 									  .queryParam("targetCalories", targetCalories)
@@ -49,7 +46,7 @@ RestTemplate rt = new RestTemplate();
 									  .build()
 									  .toUri();
 		
-		ResponseEntity<WeekResponse> response = rt.getForEntity(uri, WeekResponse.class);
+		WeekResponse response = rt.getForObject(uri, WeekResponse.class);
 		System.out.println(response.getBody());
 	}
 	

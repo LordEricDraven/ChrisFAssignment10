@@ -12,7 +12,7 @@ import com.coderscampus.Assignment10.spoonacular.SpoonacularApplication;
 public class MealPlanController {
 
 	
-	@GetMapping("mealplanner/week")
+	@GetMapping("/mealplanner/week")
 	public ResponseEntity<WeekResponse> getWeekMeals(String numCalories, String diet, String exclusions){
 		
 		SpoonacularApplication spoonacularApplication = new SpoonacularApplication();
@@ -23,7 +23,7 @@ public class MealPlanController {
 		
 	}
 
-	@GetMapping("mealplanner/day")
+	@GetMapping("/mealplanner/day")
 	public ResponseEntity<DayResponse> getDayMeals(String numCalories, String diet, String exclusions){
 		return null;
 		
