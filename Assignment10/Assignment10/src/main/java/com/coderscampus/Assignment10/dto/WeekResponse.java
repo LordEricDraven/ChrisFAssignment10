@@ -29,7 +29,7 @@ public class WeekResponse {
 	public DayResponse getTuesday() {
 		return tuesday;
 	}
-	public void setTuesday(DayResponse tuesday) {
+	public void setTuestday(DayResponse tuesday) {
 		this.tuesday = tuesday;
 	}
 	public DayResponse getWednesday() {
@@ -61,11 +61,6 @@ public class WeekResponse {
 	}
 	public void setSunday(DayResponse sunday) {
 		this.sunday = sunday;
-	}
-	@Override
-	public String toString() {
-		return "WeekResponse [monday=" + monday + ", tuesday=" + tuesday + ", wednesday=" + wednesday + ", thursday="
-				+ thursday + ", friday=" + friday + ", saturday=" + saturday + ", sunday=" + sunday + "]";
 	}
 	
 	
