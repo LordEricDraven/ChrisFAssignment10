@@ -4,11 +4,11 @@ import java.util.List;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
 
-public class DayResponse {
+public class Day {
 
 	@JsonProperty("meals")
 	private List<Meals> meals;
-	@JsonProperty("nutrients")
+	@JsonProperty("Nutrients")
 	private Nutrients nutrients;
 	
 	public List<Meals> getMeals() {
@@ -23,5 +23,7 @@ public class DayResponse {
 	public void setNutrients(Nutrients nutrients) {
 		this.nutrients = nutrients;
 	}
+	
+	
 	
 }

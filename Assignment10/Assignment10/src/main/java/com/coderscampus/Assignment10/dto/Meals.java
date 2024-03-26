@@ -5,22 +5,22 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 public class Meals {
 
 	@JsonProperty("id")
-	private String id;
+	private Double id;
 	@JsonProperty("imageType")
 	private String imageType;
 	@JsonProperty("title")
 	private String title;
 	@JsonProperty("readyInMinutes")
-	private String readyInMinutes;
+	private Integer readyInMinutes;
 	@JsonProperty("servings")
-	private String servings;
+	private Integer servings;
 	@JsonProperty("sourceUrl")
 	private String sourceUrl;
 	
-	public String getId() {
+	public Double getId() {
 		return id;
 	}
-	public void setId(String id) {
+	public void setId(Double id) {
 		this.id = id;
 	}
 	public String getImageType() {
@@ -35,16 +35,16 @@ public class Meals {
 	public void setTitle(String title) {
 		this.title = title;
 	}
-	public String getReadyInMinutes() {
+	public Integer getReadyInMinutes() {
 		return readyInMinutes;
 	}
-	public void setReadyInMinutes(String readyInMinutes) {
+	public void setReadyInMinutes(Integer readyInMinutes) {
 		this.readyInMinutes = readyInMinutes;
 	}
-	public String getServings() {
+	public Integer getServings() {
 		return servings;
 	}
-	public void setServings(String servings) {
+	public void setServings(Integer servings) {
 		this.servings = servings;
 	}
 	public String getSourceUrl() {
@@ -53,5 +53,9 @@ public class Meals {
 	public void setSourceUrl(String sourceUrl) {
 		this.sourceUrl = sourceUrl;
 	}
-	
+	@Override
+	public String toString() {
+		return "Meals [id=" + id + ", imageType=" + imageType + ", title=" + title + ", readyInMinutes="
+				+ readyInMinutes + ", servings=" + servings + ", sourceUrl=" + sourceUrl + "]";
+	}
 }

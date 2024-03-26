@@ -17,17 +17,16 @@ public class MealPlanController {
 		
 		SpoonacularApplication spoonacularApplication = new SpoonacularApplication();
 		
-		spoonacularApplication.callSpoonacularDaily(numCalories, diet, exclusions);
-		
-		return null;
+		return spoonacularApplication.callSpoonacularWeekly(numCalories, diet, exclusions);
 		
 	}
 
 	@GetMapping("/mealplanner/day")
 	public ResponseEntity<DayResponse> getDayMeals(String numCalories, String diet, String exclusions){
-		return null;
+		
+		SpoonacularApplication spoonacularApplication = new SpoonacularApplication();
+		
+		return spoonacularApplication.callSpoonacularDaily(numCalories, diet, exclusions);
 		
 	}
-	
-	
 }
