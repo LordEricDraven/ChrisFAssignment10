@@ -13,8 +13,8 @@ public class WeekResponse {
 		return week;
 	}
 	
-	public void setWeek(Map<String, DayResponse>week) {
-		
+	public void setWeek(Map<String, Day>week) {
+		this.week = week;
 	}
 	
 	

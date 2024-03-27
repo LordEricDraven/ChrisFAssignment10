@@ -8,7 +8,7 @@ public class Day {
 
 	@JsonProperty("meals")
 	private List<Meals> meals;
-	@JsonProperty("Nutrients")
+	@JsonProperty("nutrients")
 	private Nutrients nutrients;
 	
 	public List<Meals> getMeals() {
