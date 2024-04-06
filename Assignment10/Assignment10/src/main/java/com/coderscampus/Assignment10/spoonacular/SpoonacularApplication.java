@@ -5,6 +5,7 @@ import java.util.Optional;
 
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Service;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.client.RestTemplate;
 import org.springframework.web.util.UriComponentsBuilder;
 
@@ -15,9 +16,16 @@ import com.coderscampus.Assignment10.dto.WeekResponse;
 public class SpoonacularApplication {
 
 	
-	public ResponseEntity<DayResponse> callSpoonacularDaily(String numCalories, String diet, String exclusions) {
+	public ResponseEntity<DayResponse> callSpoonacularDaily(@RequestParam(required = false)String numCalories, @RequestParam(required = false)String diet, @RequestParam(required = false)String exclusions) {
 		
-		Optional<?> targetCalories = Optional.of(Double.parseDouble(numCalories));
+		Optional<?> targetCalories;
+		
+		if (numCalories != null) {
+			targetCalories = Optional.of(Double.parseDouble(numCalories));
+		}else {
+			targetCalories = null;
+		}
+		
 		
 		RestTemplate rt = new RestTemplate();
 		
@@ -35,11 +43,17 @@ public class SpoonacularApplication {
 		return response;
 	}
 	
-	public ResponseEntity<WeekResponse> callSpoonacularWeekly(String numCalories, String diet, String exclusions) {
+	public ResponseEntity<WeekResponse> callSpoonacularWeekly(@RequestParam(required = false)String numCalories, @RequestParam(required = false)String diet, @RequestParam(required = false)String exclusions) {
 		
-		Double targetCalories = Double.parseDouble(numCalories);
+		Double targetCalories;
 		
-RestTemplate rt = new RestTemplate();
+		if(numCalories != null) {
+			targetCalories = Double.parseDouble(numCalories);
+		}else {
+			targetCalories = null;
+		}
+		
+		RestTemplate rt = new RestTemplate();
 		
 		URI uri = UriComponentsBuilder.fromHttpUrl("https://api.spoonacular.com/mealplanner/generate")
 									  .queryParam("timeFrame", "week")
